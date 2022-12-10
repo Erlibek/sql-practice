@@ -1,6 +1,6 @@
 # Sql-practice-1
 ### relational scheme
-![scheme picture](https://github.com/Erlibek/IMG/blob/7e10f3fc6678a5add2c3936ec00bcd552f53155a/WhatsApp%20Image%202022-09-18%20at%2009.05.22.jpeg) 
+![WhatsApp Image 2022-09-18 at 09 05 22](https://user-images.githubusercontent.com/57404088/206873196-edc32423-a713-46c3-bbcd-fac8d49a5c19.jpeg)) 
 ### Table creation code
 ``` sql
 CREATE TABLE Manufacturers (
