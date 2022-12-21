@@ -61,3 +61,64 @@ INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('845657246','Kumar','
 20. Delete from the table all employees who work in departments with a budget greater than or equal to $60,000.
 21. Delete from the table all employees.
 ### Answers
+```sql
+1.SELECT LastName FROM Employees;
+2.SELECT DISTINCT LastName FROM Employees;
+3.SELECT * FROM Employees WHERE LastName = 'Smith';
+4.SELECT * FROM Employees
+  WHERE LastName = 'Smith' OR LastName = 'Doe';
+5.SELECT * FROM Employees WHERE Department = 14;
+6.SELECT * FROM Employees
+  WHERE Department IN (37,77);
+7.SELECT * FROM Employees
+  WHERE LastName LIKE 'S%';
+8. SELECT SUM(Budget) FROM Departments;
+9. SELECT Department, COUNT(*)
+  FROM Employees
+  GROUP BY Department;
+10. SELECT *
+ FROM Employees E INNER JOIN Departments D
+ ON E.Department = D.Code; 
+11.SELECT Employees.Name, LastName, Departments.Name AS DepartmentsName, Budget
+  FROM Employees INNER JOIN Departments
+  ON Employees.Department = Departments.Code;
+12.SELECT Name, LastName FROM Employees
+  WHERE Department IN
+  (SELECT Code FROM Departments WHERE Budget > 60000);
+13. SELECT *
+  FROM Departments
+  WHERE Budget >
+  (
+    SELECT AVG(Budget)
+    FROM Departments
+  );
+14.SELECT D.Name FROM Departments D
+  WHERE 2 < 
+  (
+   SELECT COUNT(*) 
+     FROM Employees
+     WHERE Department = D.Code
+  );
+15.SELECT e.Name, e.LastName
+FROM Employees e 
+WHERE e.Department = (
+       SELECT sub.Code 
+       FROM (SELECT * FROM Departments d ORDER BY d.budget LIMIT 2) sub 
+       ORDER BY budget DESC LIMIT 1);
+16. INSERT INTO Departments
+  VALUES ( 11 , 'Quality Assurance' , 40000);
+
+INSERT INTO Employees
+  VALUES ( '847219811' , 'Mary' , 'Moore' , 11);
+17.UPDATE Departments SET Budget = Budget * 0.9;
+18.UPDATE Employees SET Department = 14 WHERE Department = 77;
+19.DELETE FROM Employees
+  WHERE Department = 14;
+20.DELETE FROM Employees
+  WHERE Department IN
+  (
+    SELECT Code FROM Departments
+      WHERE Budget >= 60000
+  );
+21.DELETE FROM Employees;
+```
