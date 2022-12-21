@@ -17,6 +17,7 @@
    CONSTRAINT fk_Departments_Code FOREIGN KEY(Department) 
    REFERENCES Departments(Code)
  );
+ ```
  ### Sample Dataset
  ```sql
  INSERT INTO Departments(Code,Name,Budget) VALUES(14,'IT',65000);
